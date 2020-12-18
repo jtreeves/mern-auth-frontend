@@ -18,6 +18,25 @@ const Nav = (props) => {
                             <NavLink className="nav-link" exact to="/about">About</NavLink>
                         </li>
                     </ul>
+                    {
+                        props.isAuth ? 
+                        <ul className="navbar-nav ml-auto">
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <span className="nav-link logout-link" onClick={props.handleLogout}>Logout</span>
+                            </li>
+                        </ul>
+                        : <ul className="navbar-nav ml-auto">
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/signup">Create Account</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/login">Login</NavLink>
+                            </li>
+                        </ul>
+                    }
                 </div>
             </div>
         </nav>
