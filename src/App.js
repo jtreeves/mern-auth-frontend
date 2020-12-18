@@ -19,7 +19,7 @@ import Profile from './components/Profile'
 // CSS
 import './App.css'
 
-const privateRoute = ({component: Component, ...rest}) => {
+const PrivateRoute = ({component: Component, ...rest}) => {
     const user = localStorage.getItem('jwtToken')
     return <Route {...rest} render={(props) => {
         return user ? <Component {...rest} {...props}/> : <Redirect to="/login"/>
@@ -67,7 +67,7 @@ function App() {
                     <Route
                         path="/login"
                         render={(props) => {
-                            <Login
+                            return <Login
                                 {...props}
                                 nowCurrentUser={nowCurrentUser} setIsAuthenticated={props.setIsAuthenticated}
                                 user={currentUser}
