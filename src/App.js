@@ -55,7 +55,7 @@ function App() {
 
     return (
         <div className="App">
-            <Nav handleLogout={handleLogout} isAuth={isAuthenticated}/>
+            {/* <Nav handleLogout={handleLogout} isAuth={isAuthenticated}/> */}
             <Welcome />
         </div>
     )
