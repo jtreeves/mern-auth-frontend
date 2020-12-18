@@ -27,12 +27,30 @@ const Signup = () => {
         setConfirmPassword(e.target.value)
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        if (password === confirmPassword) {
+            const newUser = {name, email, password}
+            axios
+                .post(`${REACT_APP_SERVER_URL/controllers/users/register}`, newUser)
+                .then(response => {
+                    console.log(`LOG RESPONSE: ${response}`)
+                    setRedirect(true)
+                })
+                .catch(error => {
+                    console.log(`LOG ERROR: ${error}`)
+                })
+        }
+    }
+
+    if (redirect) return <Redirect to="/login" />
+
     return (
         <div className="row mt-4">
             <div className="col-md-7 offset-md-3">
                 <div className="card card-body">
                     <h2 className="py-2">Sign Up</h2>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">Name</label>
                             <input type="text" name="name" value={name} onChange={handleName} className="form-control" />
