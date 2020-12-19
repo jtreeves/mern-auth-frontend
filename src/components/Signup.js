@@ -31,7 +31,7 @@ const Signup = () => {
         if (password === confirmPassword) {
             const newUser = {name, email, password}
             axios
-                .post(`${REACT_APP_SERVER_URL}/controllers/users/register`, newUser)
+                .post(`${REACT_APP_SERVER_URL}/controllers/users/signup`, newUser)
                 .then(response => {
                     console.log(`LOG RESPONSE: ${response}`)
                     setRedirect(true)
