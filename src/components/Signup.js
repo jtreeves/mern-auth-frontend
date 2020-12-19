@@ -4,6 +4,7 @@ import axios from 'axios'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 const Signup = () => {
+    console.log('SIGN UP PAGE HIT')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -31,7 +32,7 @@ const Signup = () => {
         if (password === confirmPassword) {
             const newUser = {name, email, password}
             axios
-                .post(`${REACT_APP_SERVER_URL}/controllers/users/signup`, newUser)
+                .post(`${REACT_APP_SERVER_URL}/controllers/users/register`, newUser)
                 .then(response => {
                     // console.log(`LOG RESPONSE: ${response}`)
                     setRedirect(true)
