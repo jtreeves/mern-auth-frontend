@@ -6,7 +6,7 @@ const Nav = (props) => {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
                 <Link className="navbar-brand" to="/">MERN Auth</Link>
-                <button className="navbar-toggler" type="button" data-toggle="#navbarsExample07" data-target="#navbarsExample07" aria-controls="#navbarsExample07" aria-labe="Toggle Navigation">
+                <button className="navbar-toggler" type="button" data-toggle="#navbarsExample07" data-target="#navbarsExample07" aria-controls="#navbarsExample07" aria-label="Toggle Navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarsExample07">
