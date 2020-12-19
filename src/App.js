@@ -40,11 +40,10 @@ function App() {
             setAuthToken(localStorage.jwtToken)
             setCurrentUser(token)
         }
-
     }, [])
 
     const nowCurrentUser = (userData) => {
-        console.log(`LOG NOWCURRENTUSER IS HERE...`)
+        // console.log(`LOG NOWCURRENTUSER IS HERE...`)
         setCurrentUser(userData)
         setIsAuthenticated(true)
     }
@@ -68,7 +67,7 @@ function App() {
                         render={(props) => {
                             return <Login
                                 {...props}
-                                nowCurrentUser={nowCurrentUser} setIsAuthenticated={props.setIsAuthenticated}
+                                nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated}
                                 user={currentUser}
                             />
                         }}
