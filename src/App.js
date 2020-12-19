@@ -40,7 +40,6 @@ function App() {
             setAuthToken(localStorage.jwtToken)
             setCurrentUser(token)
         }
-
     }, [])
 
     const nowCurrentUser = (userData) => {
