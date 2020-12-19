@@ -9,7 +9,9 @@ const Nav = (props) => {
                 <button
                     className="navbar-toggler"
                     type="button"
-                    data-toggle="collapse" data-target="#navbarsExample07" aria-controls="#navbarsExample07"
+                    data-toggle="collapse"
+                    data-target="#navbarsExample07"
+                    aria-controls="#navbarsExample07"
                     aria-expanded="false"
                     aria-label="Toggle Navigation"
                 >

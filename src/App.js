@@ -43,7 +43,6 @@ function App() {
     }, [])
 
     const nowCurrentUser = (userData) => {
-        // console.log(`LOG NOWCURRENTUSER IS HERE...`)
         setCurrentUser(userData)
         setIsAuthenticated(true)
     }

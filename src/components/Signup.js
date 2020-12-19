@@ -4,7 +4,6 @@ import axios from 'axios'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 const Signup = () => {
-    console.log('SIGN UP PAGE HIT')
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -32,9 +31,8 @@ const Signup = () => {
         if (password === confirmPassword) {
             const newUser = {name, email, password}
             axios
-                .post(`${REACT_APP_SERVER_URL}/controllers/users/register`, newUser)
+                .post(`${REACT_APP_SERVER_URL}/controllers/users/signup`, newUser)
                 .then(response => {
-                    // console.log(`LOG RESPONSE: ${response}`)
                     setRedirect(true)
                 })
                 .catch(error => {
@@ -44,8 +42,6 @@ const Signup = () => {
     }
 
     if (redirect) return <Redirect to="/login" />
-
-    // console.log(`LOG REACT_APP_SERVER_URL: ${REACT_APP_SERVER_URL}`)
 
     return (
         <div className="row mt-4">
