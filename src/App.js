@@ -1,5 +1,5 @@
 // Imports
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 
