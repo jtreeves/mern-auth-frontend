@@ -70,7 +70,8 @@ function App() {
                         render={(props) => {
                             return <Login
                                 {...props}
-                                nowCurrentUser={nowCurrentUser} setIsAuthenticated={setIsAuthenticated}
+                                nowCurrentUser={nowCurrentUser}
+                                setIsAuthenticated={setIsAuthenticated}
                                 user={currentUser}
                             />
                         }}
