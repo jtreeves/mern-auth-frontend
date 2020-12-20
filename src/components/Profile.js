@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const Profile = (props) => {
+function Profile(props) {
     const userData = props.user
     ? (<div>
         <h1>Profile</h1>

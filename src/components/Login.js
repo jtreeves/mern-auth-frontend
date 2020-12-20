@@ -5,7 +5,7 @@ import jwt_decode from 'jwt-decode'
 import setAuthToken from '../utils/setAuthToken'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
-const Login = (props) => {
+function Login(props) {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 

@@ -1,6 +1,6 @@
 import { NavLink, Link } from 'react-router-dom'
 
-const Nav = (props) => {
+function Nav(props) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container">
