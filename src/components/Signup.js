@@ -36,18 +36,16 @@ function Signup() {
     }
 
     // Submit form data
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        if (password === confirmPassword) {
-            const newUser = {name, email, password}
-            axios
-                .post(`${REACT_APP_SERVER_URL}/controllers/users/signup`, newUser)
-                .then(response => {
-                    setRedirect(true)
-                })
-                .catch(error => {
-                    console.log(`SIGNUP ERROR: ${error}`)
-                })
+    const handleSubmit = async (e) => {
+        try {
+            e.preventDefault()
+            if (password === confirmPassword) {
+                const newUser = {name, email, password}
+                await axios.post(`${REACT_APP_SERVER_URL}/users/signup`, newUser)    
+                setRedirect(true)
+            }
+        } catch(error) {
+            console.log(`SIGNUP ERROR: ${error}`)  
         }
     }
 
