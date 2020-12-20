@@ -1,3 +1,4 @@
+// Create function
 function Footer() {
     return (
         <footer className="footer bg-dark">
@@ -8,4 +9,5 @@ function Footer() {
     )
 }
 
+// Export function
 export default Footer

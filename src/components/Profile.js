@@ -1,6 +1,9 @@
+// Import external dependency
 import { Link } from 'react-router-dom'
 
+// Create function
 function Profile(props) {
+    // Pull current user data from props
     const userData = props.user
     ? (<div>
         <h1>Profile</h1>
@@ -10,6 +13,7 @@ function Profile(props) {
     </div>)
     : <h4>Loading...</h4>
 
+    // Display error message if not logged in
     const errorDiv = () => {
         return (
             <div className="text-center pt-4">
@@ -25,4 +29,5 @@ function Profile(props) {
     )
 }
 
+// Export function
 export default Profile

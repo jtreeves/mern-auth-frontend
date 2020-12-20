@@ -1,3 +1,4 @@
+// Create function
 function Welcome() {
     return (
         <div>
@@ -6,4 +7,5 @@ function Welcome() {
     )
 }
 
+// Export function
 export default Welcome

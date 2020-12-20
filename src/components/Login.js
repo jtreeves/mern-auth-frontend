@@ -1,22 +1,32 @@
+// Import external dependencies
 import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import jwt_decode from 'jwt-decode'
+
+// Import internal utility
 import setAuthToken from '../utils/setAuthToken'
+
+// Create shortcut for environmental variable
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
+// Create function
 function Login(props) {
+    // Set initial state
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    // Set email from form
     const handleEmail = (e) => {
         setEmail(e.target.value)
     }
 
+    // Set password from form
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
 
+    // Submit form data
     const handleSubmit = (e) => {
         e.preventDefault()
         const userData = {email, password}
@@ -39,6 +49,7 @@ function Login(props) {
             })
     }
 
+    // Redirect to profile page
     if (props.user) return <Redirect to="/profile" />
 
     return (
@@ -63,4 +74,5 @@ function Login(props) {
     )
 }
 
+// Export function
 export default Login

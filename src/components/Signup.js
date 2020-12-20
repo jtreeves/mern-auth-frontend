@@ -1,31 +1,41 @@
+// Import external dependencies
 import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+
+// Create shortcut for environmental variable
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
+// Create function
 function Signup() {
+    // Set initial state
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [redirect, setRedirect] = useState(false)
 
+    // Set name from form
     const handleName = (e) => {
         setName(e.target.value)
     }
 
+    // Set email from form
     const handleEmail = (e) => {
         setEmail(e.target.value)
     }
 
+    // Set password from form
     const handlePassword = (e) => {
         setPassword(e.target.value)
     }
 
+    // Set confirm password from form
     const handleConfirmPassword = (e) => {
         setConfirmPassword(e.target.value)
     }
 
+    // Submit form data
     const handleSubmit = (e) => {
         e.preventDefault()
         if (password === confirmPassword) {
@@ -41,6 +51,7 @@ function Signup() {
         }
     }
 
+    // Redirect to login page
     if (redirect) return <Redirect to="/login" />
 
     return (
@@ -73,4 +84,5 @@ function Signup() {
     )
 }
 
+// Export function
 export default Signup

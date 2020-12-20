@@ -32,6 +32,7 @@ function App() {
     const [currentUser, setCurrentUser] = useState('')
     const [isAuthenticated, setIsAuthenticated] = useState(true)
 
+    // Implement useEffect
     useEffect(() => {
         let token
         if (!localStorage.getItem('jwtToken')) {
@@ -43,11 +44,13 @@ function App() {
         }
     }, [])
 
+    // Establish current user
     const nowCurrentUser = (userData) => {
         setCurrentUser(userData)
         setIsAuthenticated(true)
     }
 
+    // Log out user
     const handleLogout = () => {
         if (localStorage.getItem('jwtToken')) {
             localStorage.removeItem('jwtToken')
@@ -86,4 +89,5 @@ function App() {
     )
 }
 
+// Export funtion
 export default App

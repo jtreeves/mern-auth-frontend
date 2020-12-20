@@ -1,5 +1,7 @@
+// Import external dependency
 import { NavLink, Link } from 'react-router-dom'
 
+// Create function
 function Nav(props) {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -50,4 +52,5 @@ function Nav(props) {
     )
 }
 
+// Export function
 export default Nav
