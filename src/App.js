@@ -28,7 +28,7 @@ function PrivateRoute({component: Component, ...rest}) {
 
 // Create function for the main operations of the app
 function App() {
-    //  Set state values
+    //  Set initial state values
     const [currentUser, setCurrentUser] = useState('')
     const [isAuthenticated, setIsAuthenticated] = useState(true)
 

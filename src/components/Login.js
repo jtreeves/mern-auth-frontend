@@ -12,7 +12,7 @@ const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
 // Create function
 function Login(props) {
-    // Set initial state
+    // Set initial state values
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
