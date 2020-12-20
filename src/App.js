@@ -4,7 +4,7 @@ import { Route, Switch, Redirect } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 
 // Import internal utilities
-import setAuthToken from './utils/setAuthToken'
+import setAuthToken from './utilities/setAuthToken'
 
 // Import internal components
 import Navigation from './components/Navigation'

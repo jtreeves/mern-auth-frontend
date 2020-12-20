@@ -5,7 +5,7 @@ import axios from 'axios'
 import jwt_decode from 'jwt-decode'
 
 // Import internal utility
-import setAuthToken from '../utils/setAuthToken'
+import setAuthToken from '../utilities/setAuthToken'
 
 // Create shortcut for environmental variable
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
