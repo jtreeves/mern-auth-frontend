@@ -27,27 +27,20 @@ function Login(props) {
     }
 
     // Submit form data
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const userData = {email, password}
-        axios
-            .post(`${REACT_APP_SERVER_URL}/users/login`, userData)
-            .then(response => {
-                // Create token from response data
-                const {token} = response.data
-                // Store token in local storage
-                localStorage.setItem('jwtToken', token)
-                // Set token to auth header
-                setAuthToken(token)
-                // Decode token to get user data
-                const decoded = jwt_decode(token)
-                // Set current user
-                props.nowCurrentUser(decoded)
-            })
-            .catch(error => {
-                console.log(`LOGIN ERROR: ${error}`)
-                alert('Either Email or password is incorrect')
-            })
+    const handleSubmit = async (e) => {
+        try {
+            e.preventDefault()
+            const userData = {email, password}
+            const currentUser = await axios.post(`${REACT_APP_SERVER_URL}/users/login`, userData)
+            const {token} = currentUser.data
+            localStorage.setItem('jwtToken', token)
+            setAuthToken(token)
+            const decoded = jwt_decode(token)
+            props.nowCurrentUser(decoded)
+        } catch(error) {
+            console.log(`LOGIN ERROR: ${error}`)
+            alert('Either email or password is incorrect')
+        }
     }
 
     // Redirect to profile page
