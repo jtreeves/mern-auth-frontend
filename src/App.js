@@ -22,8 +22,8 @@ import './App.css'
 function PrivateRoute({component: Component, ...rest}) {
     const user = localStorage.getItem('jwtToken')
     return <Route {...rest} render={(props) => {
-        return user ? <Component {...rest} {...props}/> : <Redirect to="/login"/>
-    }}/>
+        return user ? <Component {...rest} {...props} /> : <Redirect to="/login" />
+    }} />
 }
 
 // Create function for the main operations of the app
@@ -61,10 +61,10 @@ function App() {
 
     return (
         <div className="App">
-            <Nav handleLogout={handleLogout} isAuth={isAuthenticated}/>
+            <Nav handleLogout={handleLogout} isAuth={isAuthenticated} />
             <div className="container mt-5">
                 <Switch>
-                    <Route path="/signup" component={Signup}/>
+                    <Route path="/signup" component={Signup} />
                     <Route
                         path="/login"
                         render={(props) => {
@@ -75,13 +75,13 @@ function App() {
                             />
                         }}
                     />
-                    <Route path="/about" component={About}/>
+                    <Route path="/about" component={About} />
                     <PrivateRoute
                         path="/profile"
                         component={Profile}
                         user={currentUser}
                     />
-                    <Route exact path="/" component={Welcome}/>
+                    <Route exact path="/" component={Welcome} />
                 </Switch>
             </div>
             <Footer />
