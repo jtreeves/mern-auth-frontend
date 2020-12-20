@@ -46,6 +46,7 @@ function Login(props) {
             })
             .catch(error => {
                 console.log(`LOGIN ERROR: ${error}`)
+                alert('Either Email or password is incorrect')
             })
     }
 

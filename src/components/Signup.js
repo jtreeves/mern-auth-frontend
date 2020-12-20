@@ -39,13 +39,15 @@ function Signup() {
     const handleSubmit = async (e) => {
         try {
             e.preventDefault()
-            if (password === confirmPassword) {
+            if (password === confirmPassword && password.length >= 8) {
                 const newUser = {name, email, password}
                 await axios.post(`${REACT_APP_SERVER_URL}/users/signup`, newUser)    
                 setRedirect(true)
+            } else {
+                alert('Password must be at least 8 characters long')  
             }
         } catch(error) {
-            console.log(`SIGNUP ERROR: ${error}`)  
+            console.log(`SIGNUP ERROR: ${error}`)
         }
     }
 
