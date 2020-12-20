@@ -7,13 +7,13 @@ import jwt_decode from 'jwt-decode'
 import setAuthToken from './utilities/setAuthToken'
 
 // Import internal components
-import Navigation from './components/Navigation'
-import Footer from './components/Footer'
-import Welcome from './components/Welcome'
-import About from './components/About'
-import Signup from './components/Signup'
-import Login from './components/Login'
-import Profile from './components/Profile'
+import Navigation from './components/elements/Navigation'
+import Footer from './components/elements/Footer'
+import Welcome from './components/pages/Welcome'
+import About from './components/pages/About'
+import Signup from './components/pages/Signup'
+import Login from './components/pages/Login'
+import Profile from './components/pages/Profile'
 
 // Import internal CSS
 import './App.css'

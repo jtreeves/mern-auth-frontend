@@ -2,7 +2,7 @@
 import { render, screen } from '@testing-library/react'
 
 // Import internal component
-import Welcome from './components/Welcome'
+import Welcome from './components/pages/Welcome'
 
 // Test Welcome component
 test('render the Welcome header', () => {
