@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
