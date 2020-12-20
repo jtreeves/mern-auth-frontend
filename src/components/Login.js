@@ -32,14 +32,20 @@ function Login(props) {
             e.preventDefault()
             const userData = {email, password}
             const currentUser = await axios.post(`${REACT_APP_SERVER_URL}/users/login`, userData)
+            // Create token from currentUser data
             const {token} = currentUser.data
+            // Store token in localStorage
             localStorage.setItem('jwtToken', token)
+            // Set token to auth header
             setAuthToken(token)
+            // Decode token to get user data
             const decoded = jwt_decode(token)
+            // Set current user with decoded data
             props.nowCurrentUser(decoded)
         } catch(error) {
-            console.log(`LOGIN ERROR: ${error}`)
+            // Alert user of any errors logging in
             alert('Either email or password is incorrect')
+            console.log(`LOGIN ERROR: ${error}`)
         }
     }
 
