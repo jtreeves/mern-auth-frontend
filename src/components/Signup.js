@@ -60,21 +60,50 @@ function Signup() {
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label htmlFor="name">Name</label>
-                    <input type="text" name="name" value={name} onChange={handleName} className="form-control" />
+                    <input
+                        type="text"
+                        name="name"
+                        value={name}
+                        onChange={handleName}
+                        className="form-control"
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" value={email} onChange={handleEmail} className="form-control" />
+                    <input
+                        type="email"
+                        name="email"
+                        value={email}
+                        onChange={handleEmail}
+                        className="form-control"
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" value={password} onChange={handlePassword} className="form-control" />
+                    <input
+                        type="password"
+                        name="password"
+                        value={password}
+                        onChange={handlePassword}
+                        className="form-control"
+                    />
                 </div>
                 <div className="form-group">
                     <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input type="password" name="confirmPassword" value={confirmPassword} onChange={handleConfirmPassword} className="form-control" />
+                    <input
+                        type="password"
+                        name="confirmPassword"
+                        value={confirmPassword}
+                        onChange={handleConfirmPassword}
+                        className="form-control"
+                    />
                 </div>
-                <button type="submit" className="btn btn-primary float-right">Submit</button>
+                <button
+                    type="submit"
+                    className="btn btn-primary float-right"
+                >
+                    Submit
+                </button>
             </form>
         </div>
     )

@@ -17,31 +17,64 @@ function Navigation(props) {
             >
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarsExample07">
+            <div
+                className="collapse navbar-collapse"
+                id="navbarsExample07"
+            >
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
-                        <NavLink className="nav-link" exact to="/">Home</NavLink>
+                        <NavLink
+                            className="nav-link"
+                            exact to="/"
+                        >
+                            Home
+                        </NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink className="nav-link" exact to="/about">About</NavLink>
+                        <NavLink
+                            className="nav-link"
+                            exact to="/about"
+                        >
+                            About
+                        </NavLink>
                     </li>
                 </ul>
                 {
                     props.isAuth
                     ? <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/profile">Profile</NavLink>
+                            <NavLink
+                                className="nav-link"
+                                to="/profile"
+                            >
+                                Profile
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <span className="nav-link logout-link" onClick={props.handleLogout}>Logout</span>
+                            <span
+                                className="nav-link logout-link"
+                                onClick={props.handleLogout}
+                            >
+                                Logout
+                            </span>
                         </li>
                     </ul>
                     : <ul className="navbar-nav ml-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/signup">Create Account</NavLink>
+                            <NavLink
+                                className="nav-link"
+                                to="/signup"
+                            >
+                                Create Account
+                            </NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/login">Login</NavLink>
+                            <NavLink
+                                className="nav-link"
+                                to="/login"
+                            >
+                                Login
+                            </NavLink>
                         </li>
                     </ul>
                 }
