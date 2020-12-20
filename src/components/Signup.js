@@ -36,7 +36,7 @@ const Signup = () => {
                     setRedirect(true)
                 })
                 .catch(error => {
-                    console.log(`LOG ERROR: ${error}`)
+                    console.log(`SIGNUP ERROR: ${error}`)
                 })
         }
     }

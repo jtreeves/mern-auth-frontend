@@ -23,8 +23,9 @@ const Login = (props) => {
         axios
             .post(`${REACT_APP_SERVER_URL}/controllers/users/login`, userData)
             .then(response => {
+                // Create token from response data
                 const {token} = response.data
-                // Save token to localStorage
+                // Store token in local storage
                 localStorage.setItem('jwtToken', token)
                 // Set token to auth header
                 setAuthToken(token)
@@ -34,7 +35,7 @@ const Login = (props) => {
                 props.nowCurrentUser(decoded)
             })
             .catch(error => {
-                console.log(`LOG ERROR: ${error}`)
+                console.log(`LOGIN ERROR: ${error}`)
             })
     }
 
