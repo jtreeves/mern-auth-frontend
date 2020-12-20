@@ -44,7 +44,7 @@ function Login(props) {
             props.nowCurrentUser(decoded)
         } catch(error) {
             // Alert user of any errors logging in
-            alert('Either email or password is incorrect')
+            alert(error.response.data.msg)
             console.log(`LOGIN ERROR: ${error}`)
         }
     }

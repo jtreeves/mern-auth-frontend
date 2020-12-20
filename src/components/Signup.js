@@ -56,6 +56,8 @@ function Signup() {
                 alert('Passwords must match')
             }
         } catch(error) {
+            // Alert user if email already in use
+            alert(error.response.data.msg)
             console.log(`SIGNUP ERROR: ${error}`)
         }
     }
