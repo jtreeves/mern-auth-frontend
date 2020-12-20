@@ -7,7 +7,7 @@ import jwt_decode from 'jwt-decode'
 import setAuthToken from './utils/setAuthToken'
 
 // Import internal components
-import Nav from './components/Nav'
+import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import Welcome from './components/Welcome'
 import About from './components/About'
@@ -61,7 +61,7 @@ function App() {
 
     return (
         <div className="App">
-            <Nav handleLogout={handleLogout} isAuth={isAuthenticated} />
+            <Navigation handleLogout={handleLogout} isAuth={isAuthenticated} />
             <div className="container mt-5">
                 <Switch>
                     <Route path="/signup" component={Signup} />
