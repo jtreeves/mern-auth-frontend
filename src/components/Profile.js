@@ -1,6 +1,3 @@
-// Import external dependency
-import { Link } from 'react-router-dom'
-
 // Create function
 function Profile(props) {
     return (
