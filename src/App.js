@@ -1,12 +1,12 @@
-// Imports
+// Import external dependencies
 import { useEffect, useState } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 
-// Utilities
+// Import internal utilities
 import setAuthToken from './utils/setAuthToken'
 
-// Components
+// Import internal components
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Welcome from './components/Welcome'
@@ -15,9 +15,10 @@ import Signup from './components/Signup'
 import Login from './components/Login'
 import Profile from './components/Profile'
 
-// CSS
+// Import internal CSS
 import './App.css'
 
+// Create private route
 const PrivateRoute = ({component: Component, ...rest}) => {
     const user = localStorage.getItem('jwtToken')
     return <Route {...rest} render={(props) => {
@@ -25,6 +26,7 @@ const PrivateRoute = ({component: Component, ...rest}) => {
     }}/>
 }
 
+// Create function for the main operations of the app
 function App() {
     //  Set state values
     const [currentUser, setCurrentUser] = useState('')
@@ -32,7 +34,6 @@ function App() {
 
     useEffect(() => {
         let token
-        // If there is a token in localStorage, but the user is not authenticated
         if (!localStorage.getItem('jwtToken')) {
             setIsAuthenticated(false)
         } else {
