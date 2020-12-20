@@ -47,23 +47,19 @@ function Login(props) {
     if (props.user) return <Redirect to="/profile" />
 
     return (
-        <div className="row mt-4">
-            <div className="col-md-7 offset-md-3">
-                <div className="card card-body">
-                    <h1 className="py-2">Log In</h1>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" name="email" value={email} onChange={handleEmail} className="form-control" />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <input type="password" name="password" value={password} onChange={handlePassword} className="form-control" />
-                        </div>
-                        <button type="submit" className="btn btn-primary float-right">Submit</button>
-                    </form>
+        <div className="row mt-4 col-md-7 offset-md-3 card card-body">
+            <h1 className="py-2">Log In</h1>
+            <form onSubmit={handleSubmit}>
+                <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="email" value={email} onChange={handleEmail} className="form-control" />
                 </div>
-            </div>
+                <div className="form-group">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" name="password" value={password} onChange={handlePassword} className="form-control" />
+                </div>
+                <button type="submit" className="btn btn-primary float-right">Submit</button>
+            </form>
         </div>
     )
 }
