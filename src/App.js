@@ -64,6 +64,8 @@ function App() {
             <Navigation handleLogout={handleLogout} isAuth={isAuthenticated} />
             <div className="container mt-5">
                 <Switch>
+                    <Route exact path="/" component={Welcome} />
+                    <Route path="/about" component={About} />
                     <Route path="/signup" component={Signup} />
                     <Route
                         path="/login"
@@ -76,13 +78,11 @@ function App() {
                             />
                         }}
                     />
-                    <Route path="/about" component={About} />
                     <PrivateRoute
                         path="/profile"
                         component={Profile}
                         user={currentUser}
                     />
-                    <Route exact path="/" component={Welcome} />
                 </Switch>
             </div>
             <Footer />
