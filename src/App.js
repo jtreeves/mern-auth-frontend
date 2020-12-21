@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import jwt_decode from 'jwt-decode'
 
-// Import internal utilities
+// Import internal utility
 import setAuthToken from './utilities/setAuthToken'
 
 // Import internal components

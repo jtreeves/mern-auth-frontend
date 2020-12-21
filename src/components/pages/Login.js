@@ -7,6 +7,9 @@ import jwt_decode from 'jwt-decode'
 // Import internal utility
 import setAuthToken from '../../utilities/setAuthToken'
 
+// Import internal component
+import FormGroup from '../elements/FormGroup'
+
 // Create shortcut for environmental variable
 const REACT_APP_SERVER_URL = process.env.REACT_APP_SERVER_URL
 
@@ -56,26 +59,20 @@ function Login(props) {
         <div className="row mt-4 col-md-7 offset-md-3 card card-body">
             <h1 className="py-2">Log In</h1>
             <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        value={email}
-                        onChange={handleEmail}
-                        className="form-control"
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        name="password"
-                        value={password}
-                        onChange={handlePassword}
-                        className="form-control"
-                    />
-                </div>
+                <FormGroup
+                    type="email"
+                    label="email"
+                    value={email}
+                    display="Email"
+                    onChange={handleEmail}
+                />
+                <FormGroup
+                    type="password"
+                    label="password"
+                    value={password}
+                    display="Password"
+                    onChange={handlePassword}
+                />
                 <button
                     type="submit"
                     className="btn btn-primary float-right"
